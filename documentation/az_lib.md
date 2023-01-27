@@ -1,0 +1,356 @@
+% The syntax is described as follows:
+% COMMAND,ALIAS,ALIAS2[,...] CARAC
+%   description
+%
+% Where 'CARAC' is command name, 'ALIAS' and 'ALIAS2' are the command equivalent aliases (there can be more than two aliases). The aliases are comma-separated,
+% no space is used between aliases.
+% 'CARAC' is the command caracteristic, a number containing the return type of the command and its arguments' types :
+% 0 -> void or no return
+% 1 -> int/bool (reserved for later use)
+% 2 -> float (generic numerical value type)
+% 3 -> string (character chain that can also be used as an array)
+%
+%
+
+# CONSTANTS
+
+## 0 - NULLARY system calls
+
+SHUTDOWN 0
+
+MAN,MANUEL,HELP 0 cpp_done
+
+EXIT,QUIT 0 cpp_done
+	Immediately stops the program with a "success" termination code.
+
+ABORT 0
+	Immediately stops the program with a "Error/Failure" termination code.
+
+CLEARSCREEN,CLR,CLS 0
+success	:	1
+error	:	0
+
+## 2 - NUMERIC CONSTANTS
+
+ZERO,FALSE,0 2 cpp_done
+value	:	0
+symbol	:	0
+
+ONE,TRUE,1,LEGENDRE_CONSTANT 2 cpp_done
+value	:	1
+symbol	:	1
+
+PI,ARCHIMEDES_CONSTANT,LUDOLPH_NUMBER 2 cpp_done
+value	:	3.14159265358979323846264338327950288
+symbol	:	π
+
+E,NAPIER_CONSTANT,EULER_NUMBER 2 cpp_done
+value	:	2.71828182845904523536028747135266249
+symbol	:	e
+
+PYTHAGORAS_CONSTANT,SQRT_2 2 cpp_done
+value	:	1.41421356237309504880168872420969807
+symbol	:	√2
+
+THEODORUS_CONSTANT,SQRT_3 2 cpp_done
+value	:	1.73205080756887729352744634150587236
+symbol	:	√3
+
+SQRT_5 2 cpp_done
+value	:	2.23606797749978969640917366873127623
+symbol	:	√5
+
+EULER_MASCHERONI_CONSTANT 2 cpp_done
+value	:	0.57721566490153286060651209008240243
+symbol	:	γ
+
+GOLDEN_RATIO 2 cpp_done
+value	:	1.61803398874989484820458683436563811
+symbol	:	φ
+
+MEISSEL_MERTENS_CONSTANT 2 cpp_done
+value	:	0.26149721284764278375542683860869585
+
+BERNSTEIN_CONSTANT 2 cpp_done
+value	:	0.28016949902386913303
+
+GAUSS_KUZMIN_WIRSING_CONSTANT 2
+value	:	0.30366300289873265859744812190155623
+
+HAFNER_SARNAK_MCCURLEY_CONSTANT 2
+value	:	0.35323637185499598454351655043268201
+
+LANDAU_CONSTANT 2
+value	:	0.5432589653429767
+
+OMEGA_CONSTANT 2
+value	:	0.56714329040978387299996866221035554
+
+GOLOMB_DICKMAN_CONSTANT 2
+value	:	0.62432998854355087099293638310083724
+
+CAHEN_CONSTANT 2
+value	:	0.6434105462
+
+TWIN_PRIME_CONSTANT 2
+value	:	0.66016181584686957392781211001455577
+
+LAPLACE_LIMIT_CONSTANT,LAPLACE_LIMIT 2
+value	:	0.66274341934918158097474209710925290
+
+EMBREE_TREFETHEN_CONSTANT 2
+value	:	0.70258
+
+LANDAU_RAMANUJAN_CONSTANT 2
+value	:	0.76422365358922066299069873125009232
+
+BRUN_CONSTANT,PRIME_QUADRUPLET_CONSTANT 2
+value	:	1.902160583104
+
+CATALAN_CONSTANT 2
+value	:	0.91596559417721901505460351493238411
+
+VISWANATH_CONSTANT 2
+value	:	1.13198824
+
+APERY_CONSTANT 2
+value	:	1.20205690315959428539973816151144999
+
+CONWAY_CONSTANT 2
+value	:	1.30357726903429639125709911215255189
+
+MILL_CONSTANT 2
+value	:	1.30637788386308069046861449260260571
+
+PLASTIC_CONSTANT 2
+value	:	1.32471795724474602596090885447809734
+
+RAMANUJAN_SOLDNER_CONSTANT 2
+value	:	1.45136923488338105028396848589202744
+
+BACKHOUSE_CONSTANT 2
+value	:	1.45607494858268967139959535111654356
+
+PORTER_CONSTANT 2
+value	:	1.4670780794
+
+LIEB_SQUARE_ICE_CONSTANT 2
+value	:	1.5396007178
+
+ERDOS_BORWEIN_CONSTANT 2
+value	:	1.60669515241529176378330152319092458
+
+NIVEN_CONSTANT 2
+value	:	1.70521114010536776428855145343450816
+
+BRUN_CONSTANT 2
+value	:	1.902160583104
+
+UNIVERSAL_PARABOLIC_CONSTANT,PARABOLIC_CONSTANT 2
+value	:	2.29558714939263807403429804918949039
+
+FEIGENBAUM_CONSTANT 2
+value	:	2.50290787509589282228390287321821578
+
+SIERPINSKI_CONSTANT 2
+value	:	2.58498175957925321706589358738317116
+
+KHINCHIN_CONSTANT 2
+value	:	2.68545200106530644530971483548179569
+
+FRANSEN_ROBINSON_CONSTANT 2
+value	:	2.80777024202851936522150118655777293
+
+LEVY_CONSTANT 2
+value	:	3.27582291872181115978768188245384386
+
+RECIPROCAL_FIBONACCI_CONSTANT 2
+value	:	3.35988566624317755317201130291892717
+
+FEIGENBAUM_CONSTANT_2 2
+value	:	4.66920160910299067185320382046620161
+
+## 3 - String constants
+
+EMPTY 3
+	The empty string
+value	:	""
+
+SPACE 3
+	The space character
+value	:	" "
+
+TAB 3
+	The tabulation/indentation character
+value	:	"	"
+
+NEWLINE 3
+	The newline character
+value	:	"\n"
+
+## 21 -
+
+## 22 - UNARY numeric_transform
+
+SQRT,SQUARE_ROOT 22
+	Extracts the square root of a given number.
+number	:	the number to be processed
+
+FACTORIAL 22
+	Returns the factorial of the number
+x	:	the number to be passed, x! will be returned.
+
+INVERSE 22
+	Inverts x and returns the result.
+x	:	the number to invert : 1/x will be returned.
+
+EXP,EXPONENTIAL 22 cpp_done
+	Returns e to the power of x
+x
+
+LOG,LOGN,LN 22 cpp_done
+	Returns the natural logarithm of x
+x
+
+LOG10,LOG 22
+	Returns the base 10 logarithm of x
+x
+
+LOG2 22
+	Returns the base 2 logarithm of x
+x
+
+COSINE,COSINUS,COS 22 cpp_done
+	Returns the cosine of x.
+x
+
+SINE,SINUS,SIN 22 cpp_done
+	Returns the sine of x.
+x
+
+TANGENT,TAN 22
+	Returns the tangent of x.
+x
+
+ARCSINUS,ARCSIN,ASIN,ASN 22
+
+ARCCOS,ARCOS,ACOS,ACS 22
+
+ARCTANGENT,ARCTAN,ATAN,ARCTG 22
+
+SIGN 22 cpp_done
+	Returns 1 or -1 depending of the sign of the number passed.
+x	:	the sign of x will be returned.
+positive number	:	1
+negative number	:	-1
+
+PLUS 22
+	Changes the sign of a given number to positive.
+number	:	the number to be processed
+
+MINUS 22
+	Changes the sign of a given number to negative.
+number
+
+ABS,ABSVAL 22 cpp_done
+	Returns the absolute value of a given number.
+number
+
+FLOOR 22
+
+CEILING 22
+
+TRUNCATE 22
+
+ROUND 22
+
+DECIMAL_PART 22
+
+## 23 - UNARY float -> str
+
+FLOAT_TO_STR,TO_STR,TOSTR,STR 23 cpp_done
+	Converts a floating-point value to a string
+a	:	the value to convert
+
+## 30 - string -> null
+
+MSG_SUCCESS,SUCCESS 30 cpp_done
+	Prints a formatted success message in the console
+
+MSG_WARNING,WARNING 30 cpp_done
+	Prints a formatted warning message in the console
+
+MSG_ERROR,ERRORMSG,ERROR 30 cpp_done
+	Prints a formatted error message in the console
+
+TITLE,CONSOLE_TITLE 30 cpp_done
+	Changes the title of the console window to a
+a	:	The new window title
+
+SYSTEM,RUN,SYS,CMD 30 cpp_done
+	Passes a command to be executed to the host environment.
+
+INSTALL 30
+
+## 32 - UNARY str -> float
+
+STR_TO_FLOAT,FLOAT 32 cpp_done
+	Returns the numeric value of a string containing a numerical value
+a	:	string corresponding to a number, as "123"
+
+INCREMENT 32
+	Increments the value of the given variable and returns the new value.
+var
+
+DECREMENT 32
+	Decrements the value of the given variable and returns the new value.
+var
+
+## 222 - BINARY NUMERIC OPERANDS
+
+ADD,+ 222 cpp_done
+	Adds two numbers a and b and returns the result.
+
+SUBSTRACT,- 222 cpp_done
+	Substracts two numbers a and b and returns the result.
+
+MULTIPLY,* 222 cpp_done
+	Multiplies two numbers a and b and returns the result.
+
+DIVIDE,/ 222 cpp_done
+	Divides a with b and returns the result.
+
+POWER,POW 222 cpp_done
+	Raises a to the power of b
+a
+b
+
+MINIMUM,MIN 222 cpp_done
+	Compares a and b, returns the minimum value.
+
+MAXIMUM,MAX 222 cpp_done
+	Compares a and b, returns the maximum value.
+
+MODULO,MOD,% 222 cpp_done
+	Returns the remainder of a divided by b.
+
+## 230 - FLOAT,STR -> VOID
+
+MSG_COLORED,COLORED_PRINT 230
+	Prints the message str in color col
+str	:	the message to display
+col	:	the ansii color code used to color the text
+
+# 330 - STR,STR -> VOID
+
+FILE_COPY,FILECOPY,COPYFILE 330
+	Copies the file with filename a into the file with filename b.
+a	:	the source file
+b	:	destination file
+
+# 333 - STR,STR -> STR
+
+STR_CONCATENATE,STR_CONCAT,STRCAT,CONCAT 333 cpp_done
+	Concatenates the two strings a and b and returns the result.
+a	:	The first string to concatenate (will be in the beginning)
+b	:	The second string to concatenate (will be in end)
