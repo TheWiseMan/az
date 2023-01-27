@@ -10,7 +10,7 @@
 % 2 -> float (generic numerical value type)
 % 3 -> string (character chain that can also be used as an array)
 %
-%
+% The number of arguments the function can accept is the number of digits in the carac - 1
 
 # CONSTANTS
 
