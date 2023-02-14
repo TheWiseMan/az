@@ -20,6 +20,7 @@ SHUTDOWN 0
 	Stops the computer with success termination code.
 
 MAN,MANUEL,HELP 0 cpp_done
+	Displays the list of available functions.
 
 EXIT,QUIT 0 cpp_done
 	Immediately stops the program with a "success" termination code.
