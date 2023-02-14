@@ -29,6 +29,7 @@ ABORT 0
 	Immediately stops the program with a "Error/Failure" termination code.
 
 CLEARSCREEN,CLR,CLS 0
+	Remove all previous input and output from the console log.
 success	:	1
 error	:	0
 
