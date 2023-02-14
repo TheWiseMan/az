@@ -17,6 +17,7 @@
 ## 0 - NULLARY system calls
 
 SHUTDOWN 0
+	Stops the computer with success termination code.
 
 MAN,MANUEL,HELP 0 cpp_done
 
