@@ -16,14 +16,14 @@
 
 ## 0 - NULLARY system calls
 
-SHUTDOWN 0
-	Stops the computer with success termination code.
+EXIT,QUIT 0 cpp_done
+	Immediately stops the program with a "success" termination code.
 
 LIST,LST 0
 	Displays the list of available functions.
 
-EXIT,QUIT 0 cpp_done
-	Immediately stops the program with a "success" termination code.
+SHUTDOWN 0
+	Stops the computer with success termination code.
 
 ABORT 0
 	Immediately stops the program with a "Error/Failure" termination code.
