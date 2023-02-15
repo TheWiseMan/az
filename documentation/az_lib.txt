@@ -19,7 +19,7 @@
 SHUTDOWN 0
 	Stops the computer with success termination code.
 
-LIST 0
+LIST,LST 0
 	Displays the list of available functions.
 
 EXIT,QUIT 0 cpp_done
