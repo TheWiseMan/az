@@ -18,8 +18,7 @@
 
 SHUTDOWN 0
 	Stops the computer with success termination code.
-
-MAN,MANUEL,HELP 0 cpp_done
+LIST 0 cpp_done
 	Displays the list of available functions.
 
 EXIT,QUIT 0 cpp_done
@@ -308,6 +307,11 @@ var
 DECREMENT 32
 	Decrements the value of the given variable and returns the new value.
 var
+
+## 33 - UNARY str -> str
+
+MAN,MANUEL,HELP 33
+	Displays the documentation for the given command name.
 
 ## 222 - BINARY NUMERIC OPERANDS
 
